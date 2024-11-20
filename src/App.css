@@ -1,38 +1,165 @@
-.App {
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+h1 {
   text-align: center;
+  color: #4a90e2;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form Styling */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  margin-bottom: 30px;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #4a90e2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #357ab8;
+}
+
+/* User List Table */
+.user-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-list th,
+.user-list td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.user-list th {
+  background-color: #4a90e2;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-list tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.user-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-list button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.user-list button.edit {
+  background: #4caf50;
+  color: white;
+}
+
+.user-list button.edit:hover {
+  background: #388e3c;
+}
+
+.user-list button.delete {
+  background: #f44336;
+  color: white;
+}
+
+.user-list button.delete:hover {
+  background: #d32f2f;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  background: #ddd;
+  color: #333;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.pagination button.active {
+  background: #4a90e2;
+  color: white;
+}
+
+/* Error Message */
+.error {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-list,
+  .pagination {
+    font-size: 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  form input {
+    font-size: 14px;
+  }
+
+  form button {
+    font-size: 14px;
   }
 }
